@@ -1,0 +1,13 @@
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+    {% for message in messages %}
+      <div class='flash'>{{message}}</div>
+     {% endfor %}
+   {% endif %}
+{% endwith %}
+<form actoin='/regist' method="post" class='fooprof'>
+  <p><div><label>Введите ваше имя: <input type="text" name="username" value="" required></label></div>
+   <p><div><label>Введите вашу почту: <input type="email" name="email" value="" required></label></div>
+  <p><div><label>Введите ваш пароль: <input type="password" name="password" value="" required></label></div>
+   <p><input type="submit" name="submit_ME" value="Подтвердить">
+</from>

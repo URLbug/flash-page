@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <h1>{{users}}</h1>
+    </head>
+    <body>
+      <form method='post'class='foologout'>
+        <div><label>Button login out: <button type="submit" name="login_out">Submit</button></label></div>
+      </form>
+      <form method="post" class='fooregist'>
+        <div><label>Button blog: <button type="submit" name="blog">Submit</button></label></div>
+      </from>
+      <form method="post" class='fooregist'>
+        <div><label>Button home page: <button type="submit" name="indexpage">Submit</button></label></div>
+      </from>
+      {% with blogs = blogs %}
+      {% if blogs %}
+            {% for blog in blogs %}
+            <div class="username">{{blog.username}}:</div>
+            <div class="userblog">{{blog.blogs}}</div>
+            {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <style>
+        div.userblog {
+            overflow: auto; 
+            padding: 30px;
+            margin: auto 500px;
+            border: 1px solid #888;
+            width: 500px;
+            margin-bottom: 1em;
+        }
+
+        div.username{
+            overflow: auto; 
+            padding: 15px;
+            margin: auto 500px;
+            border: 1px solid #888;
+            width: 50px;
+            margin-top: 1em;
+        }
+    </style>
+    </body>
+</html>

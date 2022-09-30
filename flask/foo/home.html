@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <h1>Hello {{name}}</h1>
+    </head>
+    <body>
+        <form action='/'  method="post" class='foolog'>
+            <div><label>Button login: <input type="submit"name="login" value="авторизация"></label></div>
+        </from>
+        <form action='/'  method="post" class='fooregist'>
+              <div><label>Button regist: <input type="submit"name="regist" value="регистрация"></label></div>
+        </from>
+        {% with blogs = blogs %}
+                {% if blogs %}
+                     {% for blog in blogs %}
+                            <div class="username">{{blog.username}}:</div>
+                            <div class="userblog">{{blog.blogs}}</div>
+                        {% endfor %}
+                    {% endif %}
+            {% endwith %}
+            <style>
+                div.userblog {
+                    overflow: auto; 
+                    padding: 30px;
+                    margin: auto 500px;
+                    border: 1px solid #888;
+                    width: 500px;
+                    margin-bottom: 1em;
+                }
+
+                div.username{
+                    overflow: auto; 
+                    padding: 15px;
+                    margin: auto 500px;
+                    border: 1px solid #888;
+                    width: 50px;
+                    margin-top: 1em;
+                }
+            </style>
+    </body>
+</html>
